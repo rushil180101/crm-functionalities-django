@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM</title>
+
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <img src="{% static 'images/logo.png' %}">
+    </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'index' %}">Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Services</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">About Us</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Contact Us</a>
+      </li>
+    </ul>
+
+    <span style="margin-right: 8px;"><a href="{% url 'register' %}" type="button" class="btn btn-outline-success my-2 my-sm-0">Sign Up</a></span>
+    <span><a href="{% url 'login' %}" type="button" class="btn btn-outline-success my-2 my-sm-0">Login</a></span>
+  </div>
+</nav>
+
+
+<!-- ############################################################################################################### -->
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-5" style="margin: 15px; padding:10px; border: solid black 2px; background-color: #cfe8a7;">-->
+<!--      <h1><strong>Customer Relationship Management</strong></h1>-->
+<!--      <hr>-->
+<!--      <h4>The tool that helps you track orders of your customers.</h4>-->
+<!--      <hr>-->
+<!--      <strong>Benefits of CRM</strong>-->
+<!--      <ul>-->
+<!--        <li>Connect with Customers</li>-->
+<!--        <li>Grow Efficiently</li>-->
+<!--        <li>Discover New Insights from Business Data</li>-->
+<!--        <li>Do Business Anywhere</li>-->
+<!--        <li>Safeguarding Business</li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--    <div class="col-md-6" style="margin: 15px; border: solid black 2px; padding: 1px;">-->
+<!--      <img src="{% static 'images/crm_index.png' %}" width="563px" height="395px">-->
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--</div>-->
+
+<br><br>
+<div class="container">
+<div class="col-md-12">
+        <div class="h-100 p-5 text-white bg-dark rounded-3" style="border-radius: 10px">
+          <h2>Customer Relationship Management</h2>
+          <hr color="white">
+          <p>
+            Customer relationship management (CRM) is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability.
+            <br><br>
+            When people talk about CRM, they are usually referring to a CRM system, a tool that helps with contact management, sales management, productivity, and more.
+          </p>
+          <button class="btn btn-outline-light" type="button">Learn More</button>
+        </div>
+</div>
+</div>
+
+
+<div class="container px-4 py-5" id="featured-3">
+  <hr>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+        </div>
+        <h2>Get New Insights</h2>
+        <hr>
+        <p>
+          CRM helps you collect data of customer behavior and analyse it to get actionable insights and opportunities.
+        </p>
+        <a href="#" class="icon-link">
+          Learn More
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
+        </div>
+        <h2>Manage Orders</h2>
+        <hr>
+        <p>
+          CRM helps you manage orders of all customers under one roof and generate invoices efficiently. Keep track of customer requirements, improve customer satisfaction and grow your business with CRM.
+        </p>
+        <a href="#" class="icon-link">
+          Learn More
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+      <div class="feature col">
+        <div class="feature-icon bg-primary bg-gradient">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+        </div>
+        <h2>All Under One Roof</h2>
+        <hr>
+        <p>
+          CRM helps to connect and integrate all your accounts on social media and other platforms like Gmail at the same place which makes it easier to manage your tasks.
+        </p>
+        <a href="#" class="icon-link">
+          Learn More
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+<!-- ############################################################################################################### -->
+
+
+<div class="mt-5 pt-5 pb-5 footer">
+<div class="container" style="margin-right: 15%">
+  <div class="row">
+    <div class="col-lg-5 col-xs-12 about-company">
+      <hr>
+      <h2>CRM</h2>
+      <p class="pr-5 text-white-50">We provide services to run your business smoothly and help you keep track of your customers.</p>
+      <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p>
+    </div>
+    <div class="col-lg-3 col-xs-12 links">
+      <hr>
+      <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+        <ul class="m-0 p-0">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+    </div>
+    <div class="col-lg-4 col-xs-12 location">
+      <hr>
+      <h4 class="mt-lg-0 mt-sm-4">Location</h4>
+      <p>22, Lorem ipsum dolor, consectetur adipiscing,<br>Thaltej, Ahmedabad - 380054<br>Gujarat, India</p>
+      <p>(541) 754-3010</p>
+      <p>info@crm.in</p>
+    </div>
+  </div>
+    <hr color="#484a4d">
+    <div class="col copyright">
+      <p class=""><small class="text-white-50">© 2019. All Rights Reserved.</small></p>
+    </div>
+</div>
+</div>
+</body>
+</html>

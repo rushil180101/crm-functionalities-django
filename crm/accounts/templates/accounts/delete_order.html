@@ -1,0 +1,18 @@
+{% extends 'accounts/basic.html' %}
+{% load static %}
+
+{% block title %}
+CRM | Delete Order
+{% endblock %}
+
+{% block body %}
+<form style="margin: 10px; padding: 10px; border: groove 2px; border-radius: 7px;"
+      action="{% url 'delete_order' order.id %}" method="post">
+  {% csrf_token %}
+  <h4>Confirm delete ?</h4>
+  <hr>
+
+  <button type="submit" class="btn btn-primary">Confirm</button>
+  <a href="{% url 'home' %}" type="button" class="btn btn-primary">Cancel</a>
+</form>
+{% endblock %}

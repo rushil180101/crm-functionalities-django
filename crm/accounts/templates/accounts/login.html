@@ -1,0 +1,28 @@
+{% extends 'accounts/basic.html' %}
+
+{% block title %}
+CRM | Login
+{% endblock %}
+
+
+{% block body %}
+<form class="admin-reg-form" action="" method="post">
+    {% csrf_token %}
+    <h2>Login</h2>
+    <hr>
+    {% for message in messages %}
+    <p><strong>{{message}}</strong></p>
+    <hr>
+    {% endfor %}
+    Username:
+    <input type="text" name="username">
+    <br>
+    <br>
+    Password:
+    <input type="password" name="password">
+    <hr>
+    <button type="submit">Login</button>
+    <hr>
+    <p>New user ? <a href="{% url 'register' %}">Register</a> </p>
+</form>
+{% endblock %}

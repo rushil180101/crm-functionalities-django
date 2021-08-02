@@ -1,0 +1,23 @@
+{% extends 'accounts/basic.html' %}
+{% load static %}
+
+{% block title %}
+CRM | Register
+{% endblock %}
+
+
+{% block body %}
+<form class="admin-reg-form" action="" method="post">
+    {% csrf_token %}
+    <h2>Register</h2>
+    <hr>
+    {{form.as_p}}
+    <hr>
+<!--    {% if form.errors %}-->
+<!--    {{form.errors.as_data}}-->
+<!--    {% endif %}-->
+    <button type="submit">Submit</button>
+    <hr>
+    <p>Already have an account ? <a href="{% url 'login' %}">Sign in</a> </p>
+</form>
+{% endblock %}

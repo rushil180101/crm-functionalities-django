@@ -1,0 +1,82 @@
+{% extends 'accounts/basic.html' %}
+
+{% block title %}
+CRM | Dashboard
+{% endblock %}
+
+
+{% block body %}
+
+{% include 'accounts/status.html' %}
+
+<div class="row" style="margin:auto;">
+
+
+    <div style="margin-top: 0px;
+                margin-bottom: 0px;
+                margin-left: 35px;
+                margin-right: 5px;" class="col-md-4 dash-div">
+        <div class="dash-table-head">
+            <span><h3><strong>Customers</strong></h3></span>
+        </div>
+        <hr>
+        <table class="table table-bordered dash-table-prop">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Customer</th>
+              <th scope="col">Email</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for customer in customers %}
+          <tr>
+              <th scope="row">{{customer.id}}</th>
+              <td>{{customer.name}}</td>
+              <td>{{customer.email}}</td>
+              <td><a href="{% url 'customer' customer.id %}" class="btn btn-outline-primary">View</a></td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+
+    <div class="col-md-7 dash-div">
+        <div class="dash-table-head">
+            <span><h3><strong>All orders</strong></h3></span>
+        </div>
+        <hr>
+        <table class="table table-bordered dash-table-prop">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Customer ID | Customer Name</th>
+              <th scope="col">Product ID | Product Name</th>
+              <th scope="col">Date Ordered</th>
+              <th scope="col">Status</th>
+              <th scope="col">Update</th>
+              <th scope="col">Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          {% for order in orders %}
+          <tr>
+              <th scope="row">{{order.id}}</th>
+              <td>{{order.customer.id}} | {{order.customer.name}}</td>
+              <td>{{order.product.id}} | {{order.product.name}}</td>
+              <td>{{order.date_created}}</td>
+              <td>{{order.status}}</td>
+              <td><a href="{% url 'update_order' order.id %}" class="btn btn-outline-primary">Update</a></td>
+              <td><a href="{% url 'delete_order' order.id %}" class="btn btn-outline-danger">Remove</a></td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+
+
+</div>
+{% endblock %}

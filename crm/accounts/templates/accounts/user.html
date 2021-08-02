@@ -1,0 +1,64 @@
+{% extends 'accounts/basic.html' %}
+
+{% block title %}
+CRM | Customer
+{% endblock %}
+
+{% block body %}
+<h3 style="margin-left: 22px"><strong>User Profile</strong></h3>
+<hr>
+{% include 'accounts/status.html' %}
+<div class="row" style="margin:auto;">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+          <div class="alert alert-info dash-card prod-table-head">
+              <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                <path fill-rule="evenodd" d="M2 15v-1c0-1 1-4 6-4s6 3 6 4v1H2zm6-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+              &nbsp; &nbsp;
+              <h4 class="card-title"><strong>Customer</strong></h4>
+          </div>
+          <hr>
+          <p class="card-text"><strong>Name : {{customer.first_name}} {{customer.last_name}}</strong></p>
+          <p class="card-text"><strong>Email : {{customer.email}}</strong></p>
+          <hr>
+          <p class="card-text"><strong>Total Orders : {{total_orders}}</strong></p>
+          <a href="{% url 'create_order' %}" type="button" class="btn btn-outline-primary">Place new order</a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <div class="col-md-12">
+
+        <table class="table table-bordered dash-table-prop">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">Category</th>
+              <th scope="col">Date Ordered</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for order in orders %}
+            <tr>
+              <td>{{order.product.name}}</td>
+              <td>&#x20B9; {{order.product.price}}</td>
+              <td>{{order.product.category}}</td>
+              <td>{{order.date_created}}</td>
+              <td>{{order.status}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
